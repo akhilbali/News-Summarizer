@@ -1,0 +1,50 @@
+<html>
+<head>
+	<style>
+	input{
+		padding: 12px 20px;
+		margin: 8px 0;
+		box-sizing: border-box;
+	}
+	input[type=text]{
+		-webkit-transition: width 0.4s ease-in-out;
+    	transition: width 0.4s ease-in-out;
+	}
+	input[type=text]:focus{
+		width: 80%;
+	}
+	input[type=number]{
+		width: 8%;
+	}
+	input[type="submit"]{
+		background-color: #00FFFF;
+		color: black;
+		width: 10%;
+		border-radius: 5px;
+		font-size: 16px;
+	}
+	</style>
+</head>
+<body>
+
+<h1 align="center"> News Summarizer </h1>
+
+<form action="/result/" method="POST" enctype="multipart/form-data">{% csrf_token %}
+	<div>
+	Url of the News Article:<br>
+		<input type="url" name="url" >
+	</div>
+
+	<div>
+	Enter number of lines in the Summary:<br>
+		<input type="number" name="number" min="1">
+	</div>
+
+	<div>
+		<input type="submit" value="Summarize" >
+	</div>
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<html>
+<head>
+	<style>
+	div{
+		width: 1280px;
+		padding: 10px;
+		border: 5px solid gray;
+		margin: 0;
+	}
+	span{
+		text-align: justify;
+		text-justify: inter-word;
+	}
+	ul{
+		list-style-position: inside;
+	}
+	li{
+		justify-content: initial;
+	}
+	</style>
+</head>
+
+<body>
+
+<h1 align="center"> News Summarizer </h1>
+
+<h3>The generated summary is as follows:</h3>
+<br>
+
+<div>
+{% for line in lines|safeseq %}
+	<li><span>{{line}}</span></li>
+{% endfor %}
+</div>
+
+</body>
+</html>
